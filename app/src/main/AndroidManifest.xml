@@ -19,15 +19,41 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.OnboardingActivity" android:exported="false" />
-        <activity android:name=".activities.MainActivity" android:exported="false" />
-        <activity android:name=".activities.AddTransactionActivity" android:exported="false" />
-        <activity android:name=".activities.AnalyticsActivity" android:exported="false" />
-        <activity android:name=".activities.BudgetActivity" android:exported="false" />
-        <activity android:name=".activities.GoalsActivity" android:exported="false" />
-        <activity android:name=".activities.AddGoalActivity" android:exported="false" />
-        <activity android:name=".activities.AboutActivity" android:exported="false" />
-        <activity android:name=".activities.PrivacyPolicyActivity" android:exported="false" />
+        <activity android:name=".activities.OnboardingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.AddTransactionActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.AnalyticsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.BudgetActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.GoalsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.AddGoalActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.AboutActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".activities.PrivacyPolicyActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 

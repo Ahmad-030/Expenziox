@@ -36,6 +36,7 @@ id aboutContainer
 id addContainer
 id analyticsContainer
 id barChart
+id bottomNav
 id btnAddSavings
 id btnExpense
 id btnIncome
@@ -71,6 +72,7 @@ id recyclerTransactions
 id rowPrivacyPolicy
 id spinnerCategory
 id spinnerPriority
+id toolbar
 id tvAmount
 id tvAppName
 id tvBalance
@@ -108,8 +110,6 @@ mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
 style CardStyle
-style ExpenzioXActionBar
-style ExpenzioXActionBarTitle
 style OutlineButton
 style PrimaryButton
 style Theme.ExpenzioX

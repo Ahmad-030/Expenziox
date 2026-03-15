@@ -1,0 +1,5 @@
+com.tooldynoapps.expenziox.test.app-jetified-core-1.6.1-0 C:\Users\amtal\.gradle\caches\8.9\transforms\1bd81392f9f5838fe705e7731d1ad245\transformed\jetified-core-1.6.1\res
+com.tooldynoapps.expenziox.test.app-androidTest-1 D:\ExpenzioX\app\build\generated\res\resValues\androidTest\debug
+com.tooldynoapps.expenziox.test.app-mergeDebugAndroidTestResources-2 D:\ExpenzioX\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.tooldynoapps.expenziox.test.app-mergeDebugAndroidTestResources-3 D:\ExpenzioX\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.tooldynoapps.expenziox.test.app-debugAndroidTest-4 D:\ExpenzioX\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

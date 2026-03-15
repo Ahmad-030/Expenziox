@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.tooldynoapps.expenziox.R;
 import com.tooldynoapps.expenziox.models.TransactionModel;
@@ -33,9 +34,12 @@ public class AddTransactionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_transaction);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Add Transaction");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("Add Transaction");
         }
 
         dm              = new DataManager(this);
@@ -46,24 +50,20 @@ public class AddTransactionActivity extends AppCompatActivity {
         btnExpense      = findViewById(R.id.btnExpense);
         btnIncome       = findViewById(R.id.btnIncome);
 
-        // Set today's date
         Calendar cal = Calendar.getInstance();
         selectedDate = String.format("%04d-%02d-%02d",
                 cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH));
         tvDate.setText(selectedDate);
 
-        // Category spinner
         ArrayAdapter<String> catAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, AppConstants.CATEGORIES);
         catAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategory.setAdapter(catAdapter);
 
-        // Type toggle
         updateTypeUI();
         btnExpense.setOnClickListener(v -> { selectedType = "expense"; updateTypeUI(); });
         btnIncome.setOnClickListener(v -> { selectedType = "income"; updateTypeUI(); });
 
-        // Date picker
         tvDate.setOnClickListener(v -> {
             Calendar c = Calendar.getInstance();
             new DatePickerDialog(this, (dp, y, m, d) -> {
@@ -72,11 +72,12 @@ public class AddTransactionActivity extends AppCompatActivity {
             }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
         });
 
-        // Animate entrance
         View container = findViewById(R.id.addContainer);
-        container.setAlpha(0f); container.setTranslationY(40f);
-        container.animate().alpha(1f).translationY(0f).setDuration(400)
-                .setInterpolator(new android.view.animation.DecelerateInterpolator()).start();
+        if (container != null) {
+            container.setAlpha(0f); container.setTranslationY(30f);
+            container.animate().alpha(1f).translationY(0f).setDuration(350)
+                    .setInterpolator(new android.view.animation.DecelerateInterpolator()).start();
+        }
 
         MaterialButton btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(v -> {

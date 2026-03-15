@@ -39,20 +39,32 @@ public class AboutActivity extends AppCompatActivity {
 
     private void setupBottomNav() {
         findViewById(R.id.navDashboard).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
         });
         findViewById(R.id.navAnalytics).setOnClickListener(v -> {
-            startActivity(new Intent(this, AnalyticsActivity.class));
+            Intent intent = new Intent(this, AnalyticsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
         });
         findViewById(R.id.navBudget).setOnClickListener(v -> {
-            startActivity(new Intent(this, BudgetActivity.class));
+            Intent intent = new Intent(this, BudgetActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
         });
         findViewById(R.id.navGoals).setOnClickListener(v -> {
-            startActivity(new Intent(this, GoalsActivity.class));
+            Intent intent = new Intent(this, GoalsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            finish();
         });
         findViewById(R.id.navAbout).setOnClickListener(v -> {}); // already here
         highlightNav(4);

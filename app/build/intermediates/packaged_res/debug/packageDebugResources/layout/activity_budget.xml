@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorBackground">
 
-    <ScrollView android:id="@+id/budgetScrollContainer"
-        android:layout_width="match_parent" android:layout_height="0dp"
-        android:layout_weight="1">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSurface"
+        app:titleTextColor="@color/colorTextPrimary"
+        app:navigationIconTint="@color/colorTextPrimary"
+        app:title="Budget" />
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:padding="20dp">
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/budgetScrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="always"
+        android:scrollbars="none"
+        android:clipToPadding="false">
 
-            <!-- Info tip -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="32dp">
+
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="16dp" app:cardElevation="0dp"
                 app:cardBackgroundColor="#0D00D4AA"
-                app:strokeColor="#1A00D4AA" app:strokeWidth="1dp"
-                xmlns:app="http://schemas.android.com/apk/res-auto">
-
+                app:strokeColor="#1A00D4AA" app:strokeWidth="1dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal" android:padding="16dp"
+                    android:orientation="horizontal" android:padding="14dp"
                     android:gravity="center_vertical">
-
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="💡" android:textSize="20sp" android:layout_marginEnd="12dp" />
-
+                        android:text="💡" android:textSize="18sp" android:layout_marginEnd="10dp" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="Set a monthly spending limit per category. The bar turns red when you exceed it."
                         android:textSize="12sp" android:textColor="@color/colorTeal"
@@ -35,12 +51,14 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout android:id="@+id/budgetContainer"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
+            <LinearLayout
+                android:id="@+id/budgetContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <include layout="@layout/bottom_nav" />
 </LinearLayout>

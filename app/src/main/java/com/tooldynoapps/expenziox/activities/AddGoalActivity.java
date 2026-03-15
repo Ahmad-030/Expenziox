@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.tooldynoapps.expenziox.R;
 import com.tooldynoapps.expenziox.models.GoalModel;
@@ -32,9 +33,12 @@ public class AddGoalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_goal);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("New Goal");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("New Goal");
         }
 
         dm              = new DataManager(this);
@@ -64,9 +68,11 @@ public class AddGoalActivity extends AppCompatActivity {
         });
 
         View container = findViewById(R.id.goalContainer);
-        container.setAlpha(0f); container.setTranslationY(40f);
-        container.animate().alpha(1f).translationY(0f).setDuration(400)
-                .setInterpolator(new android.view.animation.DecelerateInterpolator()).start();
+        if (container != null) {
+            container.setAlpha(0f); container.setTranslationY(30f);
+            container.animate().alpha(1f).translationY(0f).setDuration(350)
+                    .setInterpolator(new android.view.animation.DecelerateInterpolator()).start();
+        }
 
         MaterialButton btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(v -> saveGoal());
