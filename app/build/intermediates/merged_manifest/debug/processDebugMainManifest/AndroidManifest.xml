@@ -62,6 +62,9 @@
         <activity
             android:name="com.burgaynet.expenziox.activities.AboutActivity"
             android:exported="false" />
+        <activity
+            android:name="com.burgaynet.expenziox.activities.PrivacyPolicyActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

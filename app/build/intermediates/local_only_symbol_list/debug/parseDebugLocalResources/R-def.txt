@@ -64,10 +64,12 @@ id navSettings
 id onboardingContainer
 id pieChart
 id pieSection
+id policyContainer
 id progressBar
 id recentSection
 id recyclerGoals
 id recyclerTransactions
+id rowPrivacyPolicy
 id settingsContainer
 id spinnerCategory
 id spinnerPriority
@@ -100,6 +102,7 @@ layout activity_budget
 layout activity_goals
 layout activity_main
 layout activity_onboarding
+layout activity_privacy_policy
 layout activity_settings
 layout activity_splash
 layout bottom_nav

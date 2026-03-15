@@ -28,6 +28,7 @@
         <activity android:name=".activities.AddGoalActivity" android:exported="false" />
         <activity android:name=".activities.SettingsActivity" android:exported="false" />
         <activity android:name=".activities.AboutActivity" android:exported="false" />
+        <activity android:name=".activities.PrivacyPolicyActivity" android:exported="false" />
 
     </application>
 

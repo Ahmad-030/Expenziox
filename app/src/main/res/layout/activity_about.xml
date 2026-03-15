@@ -66,19 +66,46 @@
                     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="Ghulam Qasim"
+                            android:text="ToolDynoApps"
                             android:textSize="16sp" android:textStyle="bold"
                             android:textColor="@color/colorTextPrimary" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="kingqks8@gmail.com"
+                            android:text="exelsoftware@gmail.com"
                             android:textSize="13sp" android:textColor="@color/colorTeal"
                             android:layout_marginTop="2dp" />
                     </LinearLayout>
                 </LinearLayout>
+
+                <!-- Divider -->
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/colorCardStroke" android:layout_marginBottom="14dp" />
+
+                <!-- Privacy Policy row -->
+                <LinearLayout android:id="@+id/rowPrivacyPolicy"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:clickable="true" android:focusable="true"
+                    android:padding="4dp">
+                    <LinearLayout android:layout_width="36dp" android:layout_height="36dp"
+                        android:background="@drawable/category_icon_bg" android:gravity="center"
+                        android:layout_marginEnd="14dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="📄" android:textSize="16sp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Privacy Policy"
+                        android:textSize="15sp" android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp" android:textColor="@color/colorTextSecondary" />
+                </LinearLayout>
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Privacy -->
+        <!-- Privacy & Data -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -156,9 +183,6 @@
                     android:text="🎯  Savings Goals Planner"
                     android:textSize="13sp" android:textColor="@color/colorTeal"
                     android:layout_marginBottom="8dp" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🔐  PIN Lock Security"
-                    android:textSize="13sp" android:textColor="@color/colorTeal" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

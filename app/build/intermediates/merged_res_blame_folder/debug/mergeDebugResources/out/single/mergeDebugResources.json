@@ -8,12 +8,12 @@
         "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\drawable\\priority_badge_bg.xml"
     },
     {
-        "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\drawable_input_bg.xml.flat",
-        "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\drawable\\input_bg.xml"
-    },
-    {
         "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\drawable_input_bg.xml.flat",
+        "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\drawable\\input_bg.xml"
     },
     {
         "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\layout_activity_analytics.xml.flat",
@@ -108,10 +108,6 @@
         "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\drawable\\spinner_bg.xml"
     },
     {
-        "merged": "com.burgaynet.expenziox.app-debug-31:/layout_activity_settings.xml.flat",
-        "source": "com.burgaynet.expenziox.app-main-33:/layout/activity_settings.xml"
-    },
-    {
         "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\drawable_glow_ring.xml.flat",
         "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\drawable\\glow_ring.xml"
     },
@@ -158,6 +154,10 @@
     {
         "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-main-33:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.burgaynet.expenziox.app-debug-31:/layout_activity_privacy_policy.xml.flat",
+        "source": "com.burgaynet.expenziox.app-main-33:/layout/activity_privacy_policy.xml"
     },
     {
         "merged": "C:\\Users\\amtal\\.gradle\\daemon\\8.9\\com.burgaynet.expenziox.app-debug-31:\\mipmap-mdpi_ic_launcher.png.flat",

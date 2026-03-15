@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\amtal\.gradle\caches\8.9\transforms\1ad575f43947b03a783ce6261c36d507\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\amtal\.gradle\caches\8.9\transforms\f11eedec15d22e70592abcd137dc1e41\transformed\constraintlayout-2.2.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\amtal\.gradle\caches\8.9\transforms\f2fa7e1daa07ece019ce9992ed5a8e58\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
@@ -54,8 +54,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] C:\Users\amtal\.
 	xmlns:android
 		ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:4:5-32:19
-INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:4:5-32:19
+ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:4:5-33:19
+INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:4:5-33:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\amtal\.gradle\caches\8.9\transforms\1ad575f43947b03a783ce6261c36d507\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\amtal\.gradle\caches\8.9\transforms\1ad575f43947b03a783ce6261c36d507\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.0] C:\Users\amtal\.gradle\caches\8.9\transforms\f11eedec15d22e70592abcd137dc1e41\transformed\constraintlayout-2.2.0\AndroidManifest.xml:7:5-20
@@ -160,6 +160,12 @@ ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:30:9-87
 		ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:30:60-84
 	android:name
 		ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:30:19-59
+activity#com.burgaynet.expenziox.activities.PrivacyPolicyActivity
+ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:31:9-95
+	android:exported
+		ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:31:68-92
+	android:name
+		ADDED from D:\ExpenzioX\app\src\main\AndroidManifest.xml:31:19-67
 uses-sdk
 INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\ExpenzioX\app\src\main\AndroidManifest.xml

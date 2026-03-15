@@ -3,7 +3,6 @@ package com.burgaynet.expenziox.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -42,30 +41,15 @@ public class SettingsActivity extends AppCompatActivity {
         switchNotifications.setChecked(dm.isNotificationsEnabled());
         switchAutoReset.setChecked(dm.isAutoReset());
 
-
         switchNotifications.setOnCheckedChangeListener((b, checked) -> dm.setNotifications(checked));
         switchAutoReset.setOnCheckedChangeListener((b, checked) -> dm.setAutoReset(checked));
 
+        btnAbout.setOnClickListener(v -> {
+            startActivity(new Intent(this, AboutActivity.class));
+            overridePendingTransition(R.anim.slide_up_in, R.anim.fade_out);
+        });
 
         setupBottomNav();
-    }
-
-    private void showPinDialog() {
-        EditText et = new EditText(this);
-        et.setHint("Enter 4-digit PIN");
-        et.setInputType(android.text.InputType.TYPE_CLASS_NUMBER | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
-        et.setTextColor(0xFFF0F4FF);
-        new AlertDialog.Builder(this)
-                .setTitle("Set PIN")
-                .setView(et)
-                .setPositiveButton("Save", (d, w) -> {
-                    String pin = et.getText().toString().trim();
-                    if (pin.length() < 4) { Toast.makeText(this, "PIN must be 4 digits", Toast.LENGTH_SHORT).show(); return; }
-                    dm.setPin(pin);
-                    dm.setPinEnabled(true);
-                    Toast.makeText(this, "✓ PIN saved", Toast.LENGTH_SHORT).show();
-                })
-                .setNegativeButton("Cancel", null).show();
     }
 
     private void setupBottomNav() {

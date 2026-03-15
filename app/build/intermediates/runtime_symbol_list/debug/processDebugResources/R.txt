@@ -3522,6 +3522,7 @@ int id percent 0x7f080180
 int id pieChart 0x7f080181
 int id pieSection 0x7f080182
 int id pin 0x7f080183
+int id policyContainer 0x7f080238
 int id position 0x7f080184
 int id postLayout 0x7f080185
 int id pressed 0x7f080186
@@ -3541,6 +3542,7 @@ int id rightToLeft 0x7f080193
 int id right_icon 0x7f080194
 int id right_side 0x7f080195
 int id rounded 0x7f080196
+int id rowPrivacyPolicy 0x7f080239
 int id row_index_key 0x7f080197
 int id save_non_transition_alpha 0x7f080198
 int id save_overlay_view 0x7f080199
@@ -3822,6 +3824,7 @@ int layout activity_budget 0x7f0b0020
 int layout activity_goals 0x7f0b0021
 int layout activity_main 0x7f0b0022
 int layout activity_onboarding 0x7f0b0023
+int layout activity_privacy_policy 0x7f0b0078
 int layout activity_settings 0x7f0b0024
 int layout activity_splash 0x7f0b0025
 int layout bottom_nav 0x7f0b0026
