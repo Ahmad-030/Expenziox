@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout android:id="@+id/settingsContainer"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
+
+            <!-- Preferences card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/colorCard"
+                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="22dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Preferences"
+                        android:textSize="11sp" android:textColor="@color/colorTextSecondary"
+                        android:textAllCaps="true" android:letterSpacing="0.1"
+                        android:layout_marginBottom="18dp" />
+
+                    <!-- Notifications -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="18dp">
+                        <LinearLayout android:layout_width="36dp" android:layout_height="36dp"
+                            android:background="@drawable/category_icon_bg" android:gravity="center"
+                            android:layout_marginEnd="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🔔" android:textSize="17sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Notifications"
+                                android:textSize="15sp" android:textStyle="bold"
+                                android:textColor="@color/colorTextPrimary" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Budget alerts and reminders"
+                                android:textSize="12sp" android:textColor="@color/colorTextSecondary"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                        <Switch android:id="@+id/switchNotifications"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:thumbTint="@color/colorTeal"
+                            android:trackTint="#2200D4AA" />
+                    </LinearLayout>
+
+                    <!-- Auto Reset -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="36dp" android:layout_height="36dp"
+                            android:background="@drawable/category_icon_bg" android:gravity="center"
+                            android:layout_marginEnd="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🔄" android:textSize="17sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Auto-reset Budgets"
+                                android:textSize="15sp" android:textStyle="bold"
+                                android:textColor="@color/colorTextPrimary" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Reset limits at month start"
+                                android:textSize="12sp" android:textColor="@color/colorTextSecondary"
+                                android:layout_marginTop="2dp" />
+                        </LinearLayout>
+                        <Switch android:id="@+id/switchAutoReset"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:thumbTint="@color/colorTeal"
+                            android:trackTint="#2200D4AA" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Security card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/colorCard"
+                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+            <!-- About button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAbout"
+                style="@style/OutlineButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="ℹ️  About ExpenzioX"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/bottom_nav" />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00D4AA</color>
+    <color name="colorPrimaryDark">#00A882</color>
+    <color name="colorAccent">#00D4AA</color>
+    <color name="colorBackground">#0A0F1A</color>
+    <color name="colorSurface">#0F1724</color>
+    <color name="colorCard">#161F2E</color>
+    <color name="colorCardStroke">#1E3050</color>
+    <color name="colorTextPrimary">#F0F4FF</color>
+    <color name="colorTextSecondary">#7B90A8</color>
+    <color name="colorTeal">#00D4AA</color>
+    <color name="colorRed">#FF6B6B</color>
+    <color name="colorGreen">#95D5B2</color>
+    <color name="colorAmber">#FFBE0B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

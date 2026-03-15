@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bottom_nav_bg"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <LinearLayout android:id="@+id/navDashboard"
+        android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center" android:clickable="true"
+        android:focusable="true">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🏠" android:textSize="20sp" android:alpha="1" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Home" android:textSize="10sp" android:textColor="#4A5568"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/navAnalytics"
+        android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center" android:clickable="true"
+        android:focusable="true">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📊" android:textSize="20sp" android:alpha="0.5" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Analytics" android:textSize="10sp" android:textColor="#4A5568"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/navBudget"
+        android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center" android:clickable="true"
+        android:focusable="true">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="💳" android:textSize="20sp" android:alpha="0.5" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Budget" android:textSize="10sp" android:textColor="#4A5568"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/navGoals"
+        android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center" android:clickable="true"
+        android:focusable="true">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🎯" android:textSize="20sp" android:alpha="0.5" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Goals" android:textSize="10sp" android:textColor="#4A5568"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/navSettings"
+        android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+        android:orientation="vertical" android:gravity="center" android:clickable="true"
+        android:focusable="true">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="⚙️" android:textSize="20sp" android:alpha="0.5" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Settings" android:textSize="10sp" android:textColor="#4A5568"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+</LinearLayout>

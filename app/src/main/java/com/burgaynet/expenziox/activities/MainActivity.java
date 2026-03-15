@@ -1,0 +1,165 @@
+package com.burgaynet.expenziox.activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.burgaynet.expenziox.R;
+import com.burgaynet.expenziox.adapters.TransactionAdapter;
+import com.burgaynet.expenziox.models.TransactionModel;
+import com.burgaynet.expenziox.utils.AppConstants;
+import com.burgaynet.expenziox.utils.DataManager;
+import com.burgaynet.expenziox.utils.PieChartView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    private DataManager dm;
+    private TransactionAdapter adapter;
+    private PieChartView pieChart;
+    private TextView tvGreeting, tvBalance, tvIncome, tvExpense;
+    private TextView tvEmpty;
+    private RecyclerView recyclerView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
+
+        dm = new DataManager(this);
+
+        tvGreeting  = findViewById(R.id.tvGreeting);
+        tvBalance   = findViewById(R.id.tvBalance);
+        tvIncome    = findViewById(R.id.tvIncome);
+        tvExpense   = findViewById(R.id.tvExpense);
+        tvEmpty     = findViewById(R.id.tvEmpty);
+        pieChart    = findViewById(R.id.pieChart);
+        recyclerView = findViewById(R.id.recyclerTransactions);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new TransactionAdapter(this, new ArrayList<>(), this::confirmDelete);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setNestedScrollingEnabled(false);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(v -> {
+            v.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80)
+                    .withEndAction(() -> v.animate().scaleX(1f).scaleY(1f).setDuration(80)
+                            .withEndAction(() -> {
+                                startActivity(new Intent(this, AddTransactionActivity.class));
+                                overridePendingTransition(R.anim.slide_up_in, R.anim.fade_out);
+                            }).start()).start();
+        });
+
+        setupBottomNav();
+        animateEntrance();
+    }
+
+    private void setupBottomNav() {
+        findViewById(R.id.navDashboard).setOnClickListener(v -> { /* already here */ updateNavSelection(0); });
+        findViewById(R.id.navAnalytics).setOnClickListener(v -> {
+            startActivity(new Intent(this, AnalyticsActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            updateNavSelection(1);
+        });
+        findViewById(R.id.navBudget).setOnClickListener(v -> {
+            startActivity(new Intent(this, BudgetActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            updateNavSelection(2);
+        });
+        findViewById(R.id.navGoals).setOnClickListener(v -> {
+            startActivity(new Intent(this, GoalsActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            updateNavSelection(3);
+        });
+        findViewById(R.id.navSettings).setOnClickListener(v -> {
+            startActivity(new Intent(this, SettingsActivity.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            updateNavSelection(4);
+        });
+        updateNavSelection(0);
+    }
+
+    private void updateNavSelection(int idx) {
+        int[] navIds = {R.id.navDashboard, R.id.navAnalytics, R.id.navBudget, R.id.navGoals, R.id.navSettings};
+        for (int i = 0; i < navIds.length; i++) {
+            View nav = findViewById(navIds[i]);
+            nav.setSelected(i == idx);
+            TextView tv = (TextView) ((LinearLayout) nav).getChildAt(1);
+            tv.setTextColor(i == idx ? 0xFF00D4AA : 0xFF4A5568);
+            TextView icon = (TextView) ((LinearLayout) nav).getChildAt(0);
+            icon.setAlpha(i == idx ? 1f : 0.5f);
+        }
+    }
+
+    private void animateEntrance() {
+        View header = findViewById(R.id.headerCard);
+        View pie    = findViewById(R.id.pieSection);
+        View recent = findViewById(R.id.recentSection);
+        header.setAlpha(0f); header.setTranslationY(-30f);
+        pie.setAlpha(0f);    pie.setTranslationY(30f);
+        recent.setAlpha(0f); recent.setTranslationY(30f);
+        header.animate().alpha(1f).translationY(0f).setDuration(400).start();
+        pie.animate().alpha(1f).translationY(0f).setDuration(400).setStartDelay(150).start();
+        recent.animate().alpha(1f).translationY(0f).setDuration(400).setStartDelay(280).start();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshDashboard();
+    }
+
+    private void refreshDashboard() {
+        String name = dm.getUserName();
+        tvGreeting.setText("Hello, " + (name.isEmpty() ? "there" : name) + " 👋");
+
+        double income  = dm.getTotalIncomeThisMonth();
+        double expense = dm.getTotalExpenseThisMonth();
+        double balance = income - expense;
+
+        tvBalance.setText("PKR " + String.format("%,.0f", balance));
+        tvIncome.setText("PKR " + AppConstants.formatAmount(income));
+        tvExpense.setText("PKR " + AppConstants.formatAmount(expense));
+
+        // Recent transactions (last 10)
+        List<TransactionModel> all = dm.getTransactions();
+        List<TransactionModel> recent = all.subList(0, Math.min(10, all.size()));
+        adapter.updateList(recent);
+        tvEmpty.setVisibility(recent.isEmpty() ? View.VISIBLE : View.GONE);
+        recyclerView.setVisibility(recent.isEmpty() ? View.GONE : View.VISIBLE);
+
+        // Pie chart
+        List<PieChartView.Slice> slices = new ArrayList<>();
+        for (int i = 0; i < AppConstants.CATEGORIES.length; i++) {
+            double amt = dm.getCategoryExpense(AppConstants.CATEGORIES[i]);
+            if (amt > 0) {
+                slices.add(new PieChartView.Slice(AppConstants.CATEGORIES[i],
+                        (float) amt, AppConstants.CATEGORY_COLORS[i]));
+            }
+        }
+        if (slices.isEmpty()) {
+            slices.add(new PieChartView.Slice("No data", 1f, 0xFF2A3F5F));
+        }
+        pieChart.setData(slices, "Spent", "PKR " + AppConstants.formatAmount(expense));
+    }
+
+    private void confirmDelete(TransactionModel t) {
+        new AlertDialog.Builder(this)
+                .setTitle("Delete Transaction")
+                .setMessage("Remove this transaction?")
+                .setPositiveButton("Delete", (d, w) -> { dm.deleteTransaction(t.getId()); refreshDashboard(); })
+                .setNegativeButton("Cancel", null).show();
+    }
+}
