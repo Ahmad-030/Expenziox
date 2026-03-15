@@ -2,10 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
 }
 android {
-    namespace = "com.burgaynet.expenziox"
+    namespace = "com.tooldynoapps.expenziox"
     compileSdk = 36
     defaultConfig {
-        applicationId = "com.burgaynet.expenziox"
+        applicationId = "com.tooldynoapps.expenziox"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

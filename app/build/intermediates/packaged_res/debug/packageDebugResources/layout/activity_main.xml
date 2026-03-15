@@ -88,7 +88,7 @@
                     android:textAllCaps="true" android:letterSpacing="0.1"
                     android:layout_marginBottom="16dp" />
 
-                <com.burgaynet.expenziox.utils.PieChartView
+                <com.tooldynoapps.expenziox.utils.PieChartView
                     android:id="@+id/pieChart"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />

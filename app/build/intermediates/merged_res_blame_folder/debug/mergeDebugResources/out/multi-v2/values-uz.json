@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.burgaynet.expenziox.app-mergeDebugResources-29:/values-uz/values-uz.xml",
+            "outputFile": "com.tooldynoapps.expenziox.app-mergeDebugResources-29:/values-uz/values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amtal\\.gradle\\caches\\8.9\\transforms\\96ac2b7d1e42fdf6e7b010d75f3ea71b\\transformed\\core-1.13.0\\res\\values-uz\\values-uz.xml",

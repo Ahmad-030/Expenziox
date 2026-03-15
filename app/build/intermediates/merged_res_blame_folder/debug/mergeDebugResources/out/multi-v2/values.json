@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.burgaynet.expenziox.app-mergeDebugResources-29:/values/values.xml",
+            "outputFile": "com.tooldynoapps.expenziox.app-mergeDebugResources-29:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amtal\\.gradle\\caches\\8.9\\transforms\\f2fa7e1daa07ece019ce9992ed5a8e58\\transformed\\jetified-appcompat-resources-1.7.0\\res\\values\\values.xml",

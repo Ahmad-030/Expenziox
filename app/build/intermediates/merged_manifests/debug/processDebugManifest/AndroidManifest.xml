@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.burgaynet.expenziox"
+    package="com.tooldynoapps.expenziox"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -9,10 +9,10 @@
         android:targetSdkVersion="36" />
 
     <permission
-        android:name="com.burgaynet.expenziox.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.tooldynoapps.expenziox.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.burgaynet.expenziox.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.tooldynoapps.expenziox.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -26,7 +26,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.ExpenzioX" >
         <activity
-            android:name="com.burgaynet.expenziox.activities.SplashActivity"
+            android:name="com.tooldynoapps.expenziox.activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.ExpenzioX.Splash" >
             <intent-filter>
@@ -36,39 +36,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.burgaynet.expenziox.activities.OnboardingActivity"
+            android:name="com.tooldynoapps.expenziox.activities.OnboardingActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.MainActivity"
+            android:name="com.tooldynoapps.expenziox.activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.AddTransactionActivity"
+            android:name="com.tooldynoapps.expenziox.activities.AddTransactionActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.AnalyticsActivity"
+            android:name="com.tooldynoapps.expenziox.activities.AnalyticsActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.BudgetActivity"
+            android:name="com.tooldynoapps.expenziox.activities.BudgetActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.GoalsActivity"
+            android:name="com.tooldynoapps.expenziox.activities.GoalsActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.AddGoalActivity"
+            android:name="com.tooldynoapps.expenziox.activities.AddGoalActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.SettingsActivity"
+            android:name="com.tooldynoapps.expenziox.activities.AboutActivity"
             android:exported="false" />
         <activity
-            android:name="com.burgaynet.expenziox.activities.AboutActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.burgaynet.expenziox.activities.PrivacyPolicyActivity"
+            android:name="com.tooldynoapps.expenziox.activities.PrivacyPolicyActivity"
             android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.burgaynet.expenziox.androidx-startup"
+            android:authorities="com.tooldynoapps.expenziox.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

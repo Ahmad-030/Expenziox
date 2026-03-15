@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout android:id="@+id/goalContainer"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="22dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Goal Details"
+                    android:textSize="11sp" android:textColor="@color/colorTextSecondary"
+                    android:textAllCaps="true" android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Goal Name *" android:layout_marginBottom="14dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/colorTeal"
+                    app:hintTextColor="@color/colorTextSecondary"
+                    app:boxBackgroundColor="#0D00D4AA">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etGoalName"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextPrimary" android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Target Amount (PKR) *" android:layout_marginBottom="14dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/colorTeal"
+                    app:hintTextColor="@color/colorTextSecondary"
+                    app:boxBackgroundColor="#0D00D4AA">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTarget"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextPrimary"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Already Saved (PKR)" android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/colorCardStroke"
+                    app:hintTextColor="@color/colorTextSecondary"
+                    app:boxBackgroundColor="#0A161F2E">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSaved"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextPrimary"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Target Deadline"
+                    android:textSize="11sp" android:textColor="@color/colorTextSecondary"
+                    android:textAllCaps="true" android:letterSpacing="0.1"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView android:id="@+id/tvDeadline"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/date_field_bg"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp" android:layout_marginBottom="16dp"
+                    android:clickable="true" android:focusable="true"
+                    android:drawableEnd="@android:drawable/ic_menu_today"
+                    android:drawableTint="@color/colorTeal" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Priority"
+                    android:textSize="11sp" android:textColor="@color/colorTextSecondary"
+                    android:textAllCaps="true" android:letterSpacing="0.1"
+                    android:layout_marginBottom="8dp" />
+
+                <Spinner android:id="@+id/spinnerPriority"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:background="@drawable/spinner_bg"
+                    android:paddingStart="14dp" android:paddingEnd="14dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🎯  Create Goal"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

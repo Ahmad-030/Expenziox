@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.burgaynet.expenziox.app-mergeDebugResources-29:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.tooldynoapps.expenziox.app-mergeDebugResources-29:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\amtal\\.gradle\\caches\\8.9\\transforms\\af084e9b70f19865218159a1d17a6ed9\\transformed\\appcompat-1.7.0\\res\\values-en-rIN\\values-en-rIN.xml",
