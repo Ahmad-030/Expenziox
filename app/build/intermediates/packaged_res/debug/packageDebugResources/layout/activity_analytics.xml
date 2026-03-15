@@ -1,84 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorBackground">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorSurface"
-        app:titleTextColor="@color/colorTextPrimary"
-        app:navigationIconTint="@color/colorTextPrimary"
-        app:title="Analytics" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:overScrollMode="always"
-        android:scrollbars="none"
-        android:clipToPadding="false">
+        <LinearLayout android:id="@+id/analyticsContainer"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="20dp">
 
-        <LinearLayout
-            android:id="@+id/analyticsContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:paddingBottom="32dp">
-
+            <!-- Pie Chart card -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="20dp" app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/colorCard"
                 app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
+                    android:orientation="vertical" android:padding="20dp">
+
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="Spending by Category"
-                        android:textSize="10sp" android:textColor="@color/colorTextSecondary"
+                        android:textSize="11sp" android:textColor="@color/colorTextSecondary"
                         android:textAllCaps="true" android:letterSpacing="0.1"
-                        android:layout_marginBottom="12dp" />
+                        android:layout_marginBottom="16dp" />
+
                     <com.tooldynoapps.expenziox.utils.PieChartView
                         android:id="@+id/pieChart"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp" />
+                        android:layout_height="220dp" />
+
                     <LinearLayout android:id="@+id/legendContainer"
                         android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="vertical" android:layout_marginTop="12dp" />
+                        android:orientation="vertical"
+                        android:layout_marginTop="16dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Bar Chart card -->
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="20dp" app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/colorCard"
                 app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
+                    android:orientation="vertical" android:padding="20dp">
+
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="Monthly Trend (Last 6 Months)"
-                        android:textSize="10sp" android:textColor="@color/colorTextSecondary"
+                        android:textSize="11sp" android:textColor="@color/colorTextSecondary"
                         android:textAllCaps="true" android:letterSpacing="0.1"
-                        android:layout_marginBottom="12dp" />
+                        android:layout_marginBottom="16dp" />
+
                     <com.tooldynoapps.expenziox.utils.BarChartView
                         android:id="@+id/barChart"
                         android:layout_width="match_parent"
-                        android:layout_height="160dp" />
+                        android:layout_height="180dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
     <include layout="@layout/bottom_nav" />
 </LinearLayout>

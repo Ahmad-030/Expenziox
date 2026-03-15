@@ -36,7 +36,6 @@ id aboutContainer
 id addContainer
 id analyticsContainer
 id barChart
-id bottomNav
 id btnAddSavings
 id btnExpense
 id btnIncome
@@ -56,6 +55,7 @@ id goalContainer
 id headerCard
 id iconContainer
 id legendContainer
+id main
 id navAbout
 id navAnalytics
 id navBudget
@@ -72,7 +72,6 @@ id recyclerTransactions
 id rowPrivacyPolicy
 id spinnerCategory
 id spinnerPriority
-id toolbar
 id tvAmount
 id tvAppName
 id tvBalance

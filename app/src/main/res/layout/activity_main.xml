@@ -1,200 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/colorBackground">
 
-    <!--
-        Root is CoordinatorLayout so the FAB can anchor to the bottom nav
-        without overlapping it and without leaving any blank space below.
-        The NestedScrollView takes all remaining height above the nav.
-    -->
-
-    <LinearLayout
+    <!-- Scrollable content + FAB overlay using FrameLayout -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <!-- Scrollable content -->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:fillViewport="true"
-            android:overScrollMode="always"
-            android:scrollbars="none"
-            android:clipToPadding="false"
-            android:clipChildren="false">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:paddingBottom="96dp">
+                android:padding="20dp"
+                android:paddingBottom="90dp">
 
-                <!-- Greeting / Balance Header -->
-                <LinearLayout
-                    android:id="@+id/headerCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <!-- Greeting / Header Card -->
+                <LinearLayout android:id="@+id/headerCard"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:background="@drawable/header_card_bg"
-                    android:padding="20dp"
-                    android:layout_marginBottom="14dp">
+                    android:padding="24dp" android:layout_marginBottom="16dp">
 
-                    <TextView
-                        android:id="@+id/tvGreeting"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <TextView android:id="@+id/tvGreeting"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="Hello, there 👋"
-                        android:textSize="13sp"
-                        android:textColor="@color/colorTextSecondary"
-                        android:layout_marginBottom="6dp" />
+                        android:textSize="14sp" android:textColor="@color/colorTextSecondary"
+                        android:layout_marginBottom="8dp" />
 
-                    <TextView
-                        android:id="@+id/tvBalance"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <TextView android:id="@+id/tvBalance"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="PKR 0"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
+                        android:textSize="36sp" android:textStyle="bold"
                         android:textColor="@color/colorTextPrimary"
-                        android:layout_marginBottom="2dp" />
+                        android:layout_marginBottom="4dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="Balance this month"
-                        android:textSize="11sp"
-                        android:textColor="@color/colorTextSecondary"
-                        android:layout_marginBottom="18dp" />
+                        android:textSize="12sp" android:textColor="@color/colorTextSecondary"
+                        android:layout_marginBottom="24dp" />
 
                     <!-- Income / Expense row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical"
                             android:background="@drawable/teal_pill_bg"
-                            android:padding="12dp"
-                            android:layout_marginEnd="6dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="↑ Income"
-                                android:textSize="10sp"
-                                android:textColor="@color/colorTeal"
-                                android:layout_marginBottom="3dp" />
-                            <TextView
-                                android:id="@+id/tvIncome"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="PKR 0"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
+                            android:padding="14dp" android:layout_marginEnd="8dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="↑ Income" android:textSize="11sp"
+                                android:textColor="@color/colorTeal" android:layout_marginBottom="4dp" />
+                            <TextView android:id="@+id/tvIncome"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="PKR 0" android:textSize="16sp" android:textStyle="bold"
                                 android:textColor="@color/colorTextPrimary" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical"
                             android:background="@drawable/card_bg"
-                            android:padding="12dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="↓ Expense"
-                                android:textSize="10sp"
-                                android:textColor="@color/colorRed"
-                                android:layout_marginBottom="3dp" />
-                            <TextView
-                                android:id="@+id/tvExpense"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="PKR 0"
-                                android:textSize="14sp"
-                                android:textStyle="bold"
+                            android:padding="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="↓ Expense" android:textSize="11sp"
+                                android:textColor="@color/colorRed" android:layout_marginBottom="4dp" />
+                            <TextView android:id="@+id/tvExpense"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="PKR 0" android:textSize="16sp" android:textStyle="bold"
                                 android:textColor="@color/colorTextPrimary" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
                 <!-- Pie Chart section -->
-                <LinearLayout
-                    android:id="@+id/pieSection"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <LinearLayout android:id="@+id/pieSection"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:background="@drawable/card_bg"
-                    android:padding="16dp"
-                    android:layout_marginBottom="14dp">
+                    android:padding="20dp" android:layout_marginBottom="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="Spending by Category"
-                        android:textSize="10sp"
-                        android:textColor="@color/colorTextSecondary"
-                        android:textAllCaps="true"
-                        android:letterSpacing="0.1"
-                        android:layout_marginBottom="12dp" />
+                        android:textSize="11sp" android:textColor="@color/colorTextSecondary"
+                        android:textAllCaps="true" android:letterSpacing="0.1"
+                        android:layout_marginBottom="16dp" />
 
                     <com.tooldynoapps.expenziox.utils.PieChartView
                         android:id="@+id/pieChart"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp" />
+                        android:layout_height="200dp" />
                 </LinearLayout>
 
                 <!-- Recent Transactions -->
-                <LinearLayout
-                    android:id="@+id/recentSection"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <LinearLayout android:id="@+id/recentSection"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="10dp">
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Recent Transactions"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
+                            android:textSize="14sp" android:textStyle="bold"
                             android:textColor="@color/colorTextPrimary" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="Long-press to delete"
-                            android:textSize="10sp"
-                            android:textColor="@color/colorTextSecondary" />
+                            android:textSize="11sp" android:textColor="@color/colorTextSecondary" />
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tvEmpty"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="💸&#10;&#10;No transactions yet.&#10;Tap + to add one!"
-                        android:textSize="13sp"
-                        android:textColor="@color/colorTextSecondary"
-                        android:gravity="center"
-                        android:lineSpacingMultiplier="1.6"
-                        android:padding="28dp"
-                        android:visibility="visible" />
+                    <TextView android:id="@+id/tvEmpty"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="💸\n\nNo transactions yet.\nTap + to add one!"
+                        android:textSize="14sp" android:textColor="@color/colorTextSecondary"
+                        android:gravity="center" android:lineSpacingMultiplier="1.6"
+                        android:padding="32dp" android:visibility="visible" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerTransactions"
@@ -203,38 +133,28 @@
                         android:nestedScrollingEnabled="false"
                         android:overScrollMode="never"
                         android:visibility="gone" />
+
                 </LinearLayout>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <!-- Bottom nav pinned at the bottom — no extra space below it -->
-        <include
-            android:id="@+id/bottomNav"
-            layout="@layout/bottom_nav" />
+        <!-- FAB floats over scroll content, pinned just above bottom nav -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorTeal"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="@color/colorBackground"
+            app:elevation="6dp" />
 
-    </LinearLayout>
+    </FrameLayout>
 
-    <!--
-        FAB is a direct child of CoordinatorLayout.
-        app:layout_anchor points it to the bottom nav include.
-        app:layout_anchorGravity="top|end" places it at the
-        top-right corner of the nav, then the margin shifts it up cleanly.
-        This works on every screen size — no hardcoded pixel offsets.
-    -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="@color/colorTeal"
-        android:src="@android:drawable/ic_input_add"
-        app:tint="@color/colorBackground"
-        app:elevation="6dp"
-        app:fabSize="normal"
-        app:layout_anchor="@id/bottomNav"
-        app:layout_anchorGravity="top|end" />
+    <!-- Bottom nav -->
+    <include layout="@layout/bottom_nav" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

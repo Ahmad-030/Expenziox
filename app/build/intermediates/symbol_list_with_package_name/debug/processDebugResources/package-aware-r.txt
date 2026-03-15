@@ -3237,7 +3237,6 @@ id below
 id bestChoice
 id blocking
 id bottom
-id bottomNav
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3406,6 +3405,7 @@ id linear
 id listMode
 id list_item
 id m3_side_sheet
+id main
 id marquee
 id masked
 id match_constraint
@@ -3643,7 +3643,6 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
-id toolbar
 id top
 id topPanel
 id touch_outside

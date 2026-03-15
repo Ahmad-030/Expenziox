@@ -1,172 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/colorBackground">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorSurface"
-        app:titleTextColor="@color/colorTextPrimary"
-        app:navigationIconTint="@color/colorTextPrimary"
-        app:title="Privacy Policy" />
+    <LinearLayout android:id="@+id/policyContainer"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:overScrollMode="always"
-        android:scrollbars="none"
-        android:clipToPadding="false">
+        <!-- Header card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="#0D1F35"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
 
-        <LinearLayout
-            android:id="@+id/policyContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:paddingBottom="32dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="24dp" android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🛡️" android:textSize="48sp" android:layout_marginBottom="12dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Privacy Policy"
+                    android:textSize="22sp" android:textStyle="bold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:layout_marginBottom="6dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="ExpenzioX — ToolDynoApps"
+                    android:textSize="12sp" android:textColor="@color/colorTeal"
+                    android:gravity="center" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                app:cardCornerRadius="20dp" app:cardElevation="0dp"
-                app:cardBackgroundColor="#0D1F35"
-                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+        <!-- Section: Introduction -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Introduction"
+                    android:textSize="11sp" android:textColor="@color/colorTeal"
+                    android:textAllCaps="true" android:letterSpacing="0.1"
+                    android:layout_marginBottom="10dp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="ToolDynoApps built the ExpenzioX app as a free application. This page is intended to inform users about our policies regarding the collection, use, and disclosure of Personal Information for anyone who decides to use our app.\n\nBy using ExpenzioX, you agree to the terms described in this policy."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Data Collection -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="24dp" android:gravity="center">
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="🛡️" android:textSize="44sp" android:layout_marginBottom="10dp" />
+                        android:text="📦" android:textSize="18sp" android:layout_marginEnd="10dp" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Privacy Policy" android:textSize="20sp" android:textStyle="bold"
-                        android:textColor="@color/colorTextPrimary" android:layout_marginBottom="4dp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="ExpenzioX — ToolDynoApps"
-                        android:textSize="11sp" android:textColor="@color/colorTeal" android:gravity="center" />
+                        android:text="Data Collection"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="ExpenzioX does not collect, transmit, or share any personal data. All information you enter — including your name, transactions, budgets, and savings goals — is stored exclusively on your device using local storage.\n\nWe do not use any third-party analytics, advertising SDKs, or crash-reporting services."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="16dp" app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/colorCard"
-                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+        <!-- Section: Internet Permission -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Introduction" android:textSize="10sp" android:textColor="@color/colorTeal"
-                        android:textAllCaps="true" android:letterSpacing="0.1" android:layout_marginBottom="8dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="ToolDynoApps built the ExpenzioX app as a free application. This page informs users about our policies regarding the collection, use, and disclosure of Personal Information.\n\nBy using ExpenzioX, you agree to the terms described in this policy."
-                        android:textSize="12sp" android:textColor="@color/colorTextSecondary"
-                        android:lineSpacingMultiplier="1.5" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="16dp" app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/colorCard"
-                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="📦" android:textSize="16sp" android:layout_marginEnd="8dp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="Data Collection" android:textSize="10sp" android:textColor="@color/colorTeal"
-                            android:textAllCaps="true" android:letterSpacing="0.1" />
-                    </LinearLayout>
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="ExpenzioX does not collect, transmit, or share any personal data. All information is stored exclusively on your device. No third-party analytics, advertising SDKs, or crash-reporting services are used."
-                        android:textSize="12sp" android:textColor="@color/colorTextSecondary"
-                        android:lineSpacingMultiplier="1.5" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="16dp" app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/colorCard"
-                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="📵" android:textSize="16sp" android:layout_marginEnd="8dp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="No Internet Access" android:textSize="10sp" android:textColor="@color/colorTeal"
-                            android:textAllCaps="true" android:letterSpacing="0.1" />
-                    </LinearLayout>
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="This app does not require internet access and does not declare the INTERNET permission. Your data never leaves your device under any circumstances."
-                        android:textSize="12sp" android:textColor="@color/colorTextSecondary"
-                        android:lineSpacingMultiplier="1.5" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                app:cardCornerRadius="16dp" app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/colorCard"
-                app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="💾" android:textSize="16sp" android:layout_marginEnd="8dp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="Local Storage Only" android:textSize="10sp" android:textColor="@color/colorTeal"
-                            android:textAllCaps="true" android:letterSpacing="0.1" />
-                    </LinearLayout>
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="All app data is stored using Android SharedPreferences on your device. This data is private to the app and cannot be accessed by other apps. Uninstalling ExpenzioX will permanently delete all stored data."
-                        android:textSize="12sp" android:textColor="@color/colorTextSecondary"
-                        android:lineSpacingMultiplier="1.5" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:cardCornerRadius="16dp" app:cardElevation="0dp"
-                app:cardBackgroundColor="#0D00D4AA" app:strokeColor="#1A00D4AA" app:strokeWidth="1dp">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="✉️" android:textSize="16sp" android:layout_marginEnd="8dp" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="Contact Us" android:textSize="10sp" android:textColor="@color/colorTeal"
-                            android:textAllCaps="true" android:letterSpacing="0.1" />
-                    </LinearLayout>
+                        android:text="📵" android:textSize="18sp" android:layout_marginEnd="10dp" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Developer: ToolDynoApps" android:textSize="13sp" android:textStyle="bold"
-                        android:textColor="@color/colorTextPrimary" android:layout_marginBottom="2dp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="Email: exelsoftware@gmail.com"
-                        android:textSize="12sp" android:textColor="@color/colorTextPrimary" />
+                        android:text="No Internet Access"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="This app does not require internet access and does not declare the INTERNET permission. Your data never leaves your device under any circumstances."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+        <!-- Section: Local Storage -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="💾" android:textSize="18sp" android:layout_marginEnd="10dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Local Storage Only"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="All app data is stored using Android SharedPreferences on your device. This data is private to the app and cannot be accessed by other apps. Uninstalling ExpenzioX will permanently delete all stored data."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-</LinearLayout>
+        <!-- Section: Security -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🔐" android:textSize="18sp" android:layout_marginEnd="10dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Security"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="We value the security of your personal financial information. ExpenzioX provides an optional PIN lock feature to protect access to the app. Since all data remains on your device, no server-side breach can compromise your information."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Children -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="👶" android:textSize="18sp" android:layout_marginEnd="10dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Children's Privacy"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="This app does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children. Since no data leaves the device, there is no risk of unintentional data collection."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Changes -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorCard"
+            app:strokeColor="@color/colorCardStroke" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🔄" android:textSize="18sp" android:layout_marginEnd="10dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Changes to This Policy"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="We may update our Privacy Policy from time to time. Any changes will be reflected in a new version of the app on the Google Play Store. We encourage you to review this page periodically for any changes."
+                    android:textSize="13sp" android:textColor="@color/colorTextSecondary"
+                    android:lineSpacingMultiplier="1.6" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Contact card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="18dp" app:cardElevation="0dp"
+            app:cardBackgroundColor="#0D00D4AA"
+            app:strokeColor="#1A00D4AA" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="✉️" android:textSize="18sp" android:layout_marginEnd="10dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Contact Us"
+                        android:textSize="11sp" android:textColor="@color/colorTeal"
+                        android:textAllCaps="true" android:letterSpacing="0.1" />
+                </LinearLayout>
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="If you have any questions or suggestions about this Privacy Policy, please contact us."
+                    android:textSize="13sp" android:textColor="@color/colorTeal"
+                    android:lineSpacingMultiplier="1.5"
+                    android:layout_marginBottom="8dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Developer: ToolDynoApps"
+                    android:textSize="13sp" android:textStyle="bold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:layout_marginBottom="4dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Email: exelsoftware@gmail.com"
+                    android:textSize="13sp" android:textColor="@color/colorTextPrimary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>
